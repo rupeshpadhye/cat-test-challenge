@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loading_pic {
+  position: absolute;
+  @keyframes shine {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(46px);
+    }
+  }
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    60deg,
+    #ececec 25%,
+    #fcfcfc 25%,
+    #fcfcfc 50%,
+    #ececec 50%,
+    #ececec 75%,
+    #fcfcfc 75%,
+    #fcfcfc 100%
+  );
+  background-size: 69.28px 120px;
+  animation: shine 0.5s linear infinite;
+  background: #ccc;
+}
