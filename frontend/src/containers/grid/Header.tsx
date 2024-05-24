@@ -7,10 +7,11 @@ import { timeAgo } from '../../utils';
 import { useQueryClient } from '@tanstack/react-query';
 
 const Header = () => {
-  const { mutate: syncCards, isPending, status } = useSyncCards();
+  const { mutate: syncCards, status } = useSyncCards();
   const [synchedAt] = useSynchedAtAtom();
   const queryClient = useQueryClient();
   const [isSynced] = useSynchedAtom();
+
 
   const sync = () => {
     //@ts-ignore
@@ -30,7 +31,7 @@ const Header = () => {
   return (
     <div className={cs.header}>
       <div className={cs['inline']}>
-        {isPending ? (
+        {status === 'pending' ? (
           <>
             {' '}
             <Spinner size="small" />

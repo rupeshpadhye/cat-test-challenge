@@ -1,9 +1,22 @@
 # Zania Test Challenge 
 
 
-### Local Setup 
+### Local Dev Setup 
 ```
+    Running Frontend (cd frontend)
     npm install && npm run dev
+
+    Running Backend (cd backend)
+    npm install && npm start
+
+
+```
+
+### Using Docker
+
+```
+docker compose -f "docker-compose.yml" up -d --build 
+
 ```
 
 
@@ -13,7 +26,8 @@
     - Card Reording implemented using HTML5 drag and drop API  
     - Card Details are shown in modal when one clicks on card
 
-- [x] Part 2: Mock
+- [x] Part 2: Making the call
+    - Created Backend with express
 
 - [x] Part 3: Data Fetching & Synching Changes
     - Data Fetching is implemented using React Query 
@@ -21,7 +35,8 @@
     - Showing time difference between current time and last synced time e.g. `Synced 5 min ago`
 
 - [x] Part 4: Deployment
-
+    - Each frontend & backend folder has docker file. 
+    - update VITE_APP_BASE_URL On Deployment of backend   
 
 - [x] Part 5: API Design
 

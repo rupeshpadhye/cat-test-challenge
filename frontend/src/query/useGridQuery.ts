@@ -11,13 +11,13 @@ const getCardsAPI = async (): Promise<{
   data: Card[];
 }> => {
   const response = await getCards();
-  if (response?.data) {
-    response.data.forEach((c) => {
+  if (response?.data?.cards) {
+    response.data.cards.forEach((c: Card) => {
       //@ts-ignore
       c.image = `https://cataas.com/cat?random=${c.position}`;
     });
   }
-  return response;
+  return { data: response.data.cards};
 };
 
 const syncCardsAPI = async (cards: Card[]) => {
@@ -76,7 +76,6 @@ export const useSyncCards = () => {
   return useMutation({
     mutationFn: syncCardsAPI,
     onSuccess: () => {
-      console.log('came in success');
       if (!isSynced) {
         setSynched(true);
         setSynchedAt(new Date());

@@ -11,6 +11,7 @@ function GridPage() {
     swapCards(params);
   };
 
+
   if (isLoading) {
     return (
       <div>
