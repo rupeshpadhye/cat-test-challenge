@@ -37,6 +37,7 @@ docker compose -f "docker-compose.yml" up -d --build
 - [x] Part 4: Deployment
     - Each frontend & backend folder has docker file. 
     - update VITE_APP_BASE_URL On Deployment of backend   
+    - Currently Its deployed on render [Live Link](https://zania-test-challenge.onrender.com/)
 
 - [x] Part 5: API Design
 
