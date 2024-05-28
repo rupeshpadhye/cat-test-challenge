@@ -4,6 +4,7 @@ import { LazyImage } from '../../../components/LazyImage';
 import cs from './Item.module.css';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
+import Spinner from '../../../components/Spinner';
 
 type CardProps = {
   card: Card;
@@ -47,10 +48,12 @@ const Item = ({ card, handleDrag, handleDrop }: CardProps) => {
           onOpenModal(card);
         }}
       >
-        <div>{card.title}</div>
-        <Suspense fallback={<div className={cs.loading_pic} />}>
+        <div className={cs.card_title}>{card.title}</div>
+        <div className={cs.body}>
+        <Suspense fallback={<div className={cs.loading_pic}><Spinner size="medium" /> </div>}>
           <LazyImage
             src={card.image || `https://cataas.com/cat?random=${card.position}`}
+            className={cs.img}
             style={{
               width: '100%',
               height: '100%',
@@ -58,6 +61,8 @@ const Item = ({ card, handleDrag, handleDrop }: CardProps) => {
             }}
           />
         </Suspense>
+        </div>
+       
       </div>
     </>
   );
