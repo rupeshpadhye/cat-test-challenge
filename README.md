@@ -1,4 +1,3 @@
-# Zania Test Challenge 
 
 
 ### Local Dev Setup 
